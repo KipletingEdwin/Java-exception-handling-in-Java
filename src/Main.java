@@ -1,15 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+import  java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        //exception  =      an event that occurs during tje execution of a program that,
+        //                   disrupts the normal flow of instructions
+        Scanner scanner = new Scanner(System.in);
+      try{
+
+
+          System.out.println("Enter a whole number to divide: ");
+          int x = scanner.nextInt();
+
+          System.out.println("Enter  a whole number to divide by :");
+          int y = scanner.nextInt();
+
+          int z = x/y;
+
+          System.out.println("The result is: "+z);
+      }
+      catch (ArithmeticException e){
+          System.out.println("Boss, you can't divide by zero");
+      }
+      catch (InputMismatchException e){
+          System.out.println("Please enter a valid number");
+      }
+      catch (Exception e){
+          System.out.println("Something went wrong");
+      }
+      finally {
+          scanner.close();
+      }
+
     }
 }
